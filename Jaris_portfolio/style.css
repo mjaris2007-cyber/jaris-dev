@@ -1,0 +1,204 @@
+/* ==========================================================================
+   THEME: AURORA GLASSMORPHIC DARK (PREMIUM SUITE) - ENGLISH EDITION
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cabinet+Grotesk:wght@800;900&display=swap');
+
+:root {
+    --bg-deep: #030712;
+    --glass-card: rgba(17, 24, 39, 0.55);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --aurora-1: #10b981;
+    --aurora-2: #3b82f6;
+    --aurora-3: #8b5cf6;
+    --text-white: #ffffff;
+    --text-glow: #f3f4f6;
+    --text-dim: #9ca3af;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background-color: var(--bg-deep);
+    color: var(--text-glow);
+    line-height: 1.6;
+    padding-top: 140px;
+    position: relative;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Ambient Aurora Glow Spheres */
+body::before, body::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    filter: blur(140px);
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.35;
+}
+body::before { background: radial-gradient(circle, var(--aurora-1) 0%, transparent 70%); top: -5%; left: -5%; }
+body::after { background: radial-gradient(circle, var(--aurora-3) 0%, transparent 70%); bottom: -5%; right: -5%; }
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Floating Glass Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 900px;
+    background: rgba(3, 7, 18, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* Pastikan logo span nampak cantik dan tiada titik */
+.logo { 
+    display: flex; align-items: center; gap: 10px; font-family: 'Cabinet Grotesk', sans-serif; 
+    font-size: 1.5rem; font-weight: 900; color: #ffffff; text-decoration: none; 
+}
+
+.logo span { 
+    background: linear-gradient(135deg, #22d3ee, #3b82f6); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    font-weight: 900;
+    margin-left: 2px; /* Jarak antara Jaris dan dev */
+}
+
+.logo-icon {
+    width: 26px; height: 26px; color: #3b82f6;
+    filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.4));
+}
+
+.logo span {
+    color: var(--text-dim);
+    font-weight: 500;
+}
+
+.logo-icon {
+    width: 26px;
+    height: 26px;
+    color: #34d399;
+    filter: drop-shadow(0 0 8px rgba(52, 211, 153, 0.4));
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+}
+
+.nav-links a {
+    color: var(--text-dim);
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 12px;
+    transition: all 0.2s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--text-white);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Glassmorphic Container Cards */
+.hero, .content-section, .game-box, .form-box {
+    background: var(--glass-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    padding: 3rem 2.5rem;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Hero Section Formatting */
+.hero { text-align: center; padding: 4rem 2rem; }
+.hero h1 { font-family: 'Cabinet Grotesk', sans-serif; font-size: 3rem; font-weight: 900; color: var(--text-white); margin-bottom: 1rem; }
+.hero h1 span { background: linear-gradient(135deg, #fff 40%, #a7f3d0, #93c5fd); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero p { color: var(--text-dim); font-size: 1.1rem; max-width: 600px; margin: 0 auto 1.5rem auto; }
+.hero h3 { display: inline-block; background: rgba(59, 130, 246, 0.15); color: #93c5fd; padding: 0.5rem 1.5rem; border-radius: 12px; font-size: 0.85rem; font-weight: 700; border: 1px solid rgba(59, 130, 246, 0.3); }
+
+.content-section h2, .game-box h2, .form-box h2 {
+    font-family: 'Cabinet Grotesk', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 900;
+    color: var(--text-white);
+    margin-bottom: 1.2rem;
+}
+
+.content-section p {
+    color: var(--text-dim);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* Form Styling */
+.form-group { margin-bottom: 1.5rem; text-align: left; }
+.form-group label { display: block; margin-bottom: 0.6rem; font-weight: 600; font-size: 0.85rem; color: var(--text-white); text-transform: uppercase; letter-spacing: 0.5px; }
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 1rem 1.2rem; background: rgba(3, 7, 18, 0.6);
+    border: 1px solid var(--glass-border); border-radius: 14px;
+    color: var(--text-white); font-size: 1rem; transition: all 0.2s;
+}
+.form-group input:focus, .form-group select:focus { outline: none; border-color: #3b82f6; box-shadow: 0 0 15px rgba(59, 130, 246, 0.3); }
+
+/* Glow Accent Button */
+.btn {
+    background: linear-gradient(135deg, var(--aurora-2), var(--aurora-3)); color: var(--text-white);
+    border: none; padding: 1rem 2rem; border-radius: 14px; cursor: pointer;
+    font-weight: 700; font-size: 1rem; display: inline-block; text-decoration: none;
+    width: 100%; text-align: center; box-shadow: 0 10px 20px rgba(139, 92, 246, 0.15); transition: all 0.2s;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(139, 92, 246, 0.3); filter: brightness(1.1); }
+
+.error-msg { color: #ef4444; font-size: 0.85rem; margin-top: 0.4rem; display: none; font-weight: 500; }
+.success-box { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); padding: 1rem; border-radius: 14px; margin-bottom: 1.5rem; display: none; font-weight: 700; text-align: center; }
+
+/* Interactive Binary Box */
+.game-box { max-width: 650px; margin: 0 auto; width: 100%; text-align: center; }
+.game-box p { color: var(--text-dim); margin-bottom: 2rem; font-size: 0.95rem; }
+.result-box { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--glass-border); }
+.result-box h3 { font-size: 1.1rem; color: var(--text-dim); font-weight: 500; margin-bottom: 0.5rem; }
+#decimalOutput {
+    font-family: 'Cabinet Grotesk', sans-serif; font-size: 2.8rem; font-weight: 900;
+    background: linear-gradient(135deg, #34d399, #60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    display: inline-block; transition: all 0.2s;
+}
+
+/* Tables Layout */
+table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; }
+td { padding: 1.2rem 0.5rem; border-bottom: 1px solid rgba(255, 255, 255, 0.04); color: var(--text-dim); }
+td strong { color: var(--text-white); }
+
+footer { text-align: center; padding: 3rem 0; color: var(--text-dim); font-size: 0.85rem; }
