@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game | Jaris.dev</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px; color: #3b82f6;">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+            Jaris<span class="dot">.</span><span>dev</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="game.html" class="active">Game</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="glass-box" style="text-align: center;">
+            <h2>Number Guessing Game</h2>
+            <p>I have selected a secret number between 1 and 100. Can you guess it?</p>
+            <input type="number" id="guessInput" placeholder="Enter a number (1-100)" style="width: 100%; padding: 1rem; margin-top: 1rem; border-radius: 12px; border: 1px solid #333; background: #111; color: white;">
+            <button class="btn" onclick="checkGuess()">Submit Guess</button>
+            <button class="btn" onclick="resetGame()" style="background: #333;">Reset Game</button>
+            <div id="gameHint" style="margin-top: 1.5rem; font-weight: bold;">Start guessing...</div>
+            <p style="margin-top: 0.5rem;">Attempts: <span id="attemptCount">0</span></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
